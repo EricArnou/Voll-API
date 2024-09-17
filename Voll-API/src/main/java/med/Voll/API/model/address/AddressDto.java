@@ -1,4 +1,20 @@
 package med.Voll.API.model.address;
 
-public record AddressDto(String place, String neighborhood, String cep, String state, String city, String complement, String number) {
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+
+public record AddressDto(
+        @NotBlank
+        String place,
+        @NotBlank
+        String neighborhood,
+        @NotBlank
+        @Pattern(regexp = "\\d{8}")
+        String cep,
+        @NotBlank
+        String state,
+        @NotBlank
+        String city,
+        String complement,
+        String number) {
 }
