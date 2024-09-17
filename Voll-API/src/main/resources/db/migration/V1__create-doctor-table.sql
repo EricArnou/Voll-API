@@ -6,7 +6,7 @@ CREATE TABLE doctors(
     specialty VARCHAR(100) NOT NULL,
     place VARCHAR(100) NOT NULL,
     neighborhood VARCHAR(100) NOT NULL,
-    zipCode VARCHAR(9) NOT NULL,
+    cep VARCHAR(9) NOT NULL,
     state VARCHAR(2) NOT NULL,
     city VARCHAR(100) NOT NULL,
     "number" VARCHAR(20),
