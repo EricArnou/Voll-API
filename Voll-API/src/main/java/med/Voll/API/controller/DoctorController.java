@@ -12,6 +12,6 @@ public class DoctorController {
 
     @PostMapping()
     public void registerDoctor(@RequestBody RegisterDoctorDto registerDoctorDto){
-        
+
     }
 }

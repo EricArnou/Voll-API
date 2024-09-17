@@ -1,0 +1,29 @@
+meta {
+  name: register doctor
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/medicos
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Eric Arnou Santos",
+    "email": "ericarnou@gmail.com",
+    "crm": "123456",
+    "specialty": "ORTOPEDIA",
+    "address": {
+      "place": "rua 1",
+      "neighborhood": "bairro",
+      "zipCode": "1245678",
+      "state": "estado",
+      "city": "cidade",
+      "complement": "complemento",
+      "number": "123"
+    }
+  }
+}

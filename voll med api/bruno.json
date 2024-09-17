@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "voll med api",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
