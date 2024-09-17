@@ -17,6 +17,8 @@ public record RegisterDoctorDto(
         String crm,
         @NotNull
         Specialty specialty,
+        @NotBlank
+        String phone,
         @NotNull
         @Valid
         AddressDto address) {
