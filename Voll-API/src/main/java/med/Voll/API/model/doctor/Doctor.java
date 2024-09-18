@@ -37,4 +37,10 @@ public class Doctor{
         this.address = new Address(registerDoctorDto.address());
         this.phone = registerDoctorDto.phone();
     }
+
+    public void updateInformation(UpdateDoctorDto updateDoctorDto) {
+        if(updateDoctorDto.name() != null) this.name = updateDoctorDto.name();
+        if(updateDoctorDto.phone() != null) this.phone = updateDoctorDto.phone();
+        if(updateDoctorDto.address() != null) this.address = new Address(updateDoctorDto.address());
+    }
 }
