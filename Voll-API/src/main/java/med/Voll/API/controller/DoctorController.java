@@ -2,12 +2,12 @@ package med.Voll.API.controller;
 
 import jakarta.validation.Valid;
 import med.Voll.API.model.doctor.RegisterDoctorDto;
+import med.Voll.API.model.doctor.ReturnDoctorDto;
 import med.Voll.API.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/medicos")
@@ -19,5 +19,10 @@ public class DoctorController {
     @PostMapping()
     public void registerDoctor(@RequestBody @Valid RegisterDoctorDto registerDoctorDto){
         doctorService.registerDoctor(registerDoctorDto);
+    }
+
+    @GetMapping()
+    public List<ReturnDoctorDto> getListOfDoctors(){
+        return doctorService.getListOfDoctors();
     }
 }
