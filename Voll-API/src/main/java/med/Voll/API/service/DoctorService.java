@@ -5,6 +5,8 @@ import med.Voll.API.model.doctor.DoctorRepository;
 import med.Voll.API.model.doctor.RegisterDoctorDto;
 import med.Voll.API.model.doctor.ReturnDoctorDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,10 +25,8 @@ public class DoctorService {
     }
 
     @Transactional(isolation = Isolation.READ_COMMITTED)
-    public List<ReturnDoctorDto> getListOfDoctors() {
-        return doctorRepository.findAll()
-                .stream()
-                .map(doctor -> new ReturnDoctorDto(doctor))
-                .toList();
+    public Page<ReturnDoctorDto> getListOfDoctors(Pageable pageable) {
+        return doctorRepository.findAll(pageable)
+                .map(doctor -> new ReturnDoctorDto(doctor));
     }
 }

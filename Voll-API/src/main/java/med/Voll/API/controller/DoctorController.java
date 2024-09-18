@@ -5,6 +5,8 @@ import med.Voll.API.model.doctor.RegisterDoctorDto;
 import med.Voll.API.model.doctor.ReturnDoctorDto;
 import med.Voll.API.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,7 +24,7 @@ public class DoctorController {
     }
 
     @GetMapping()
-    public List<ReturnDoctorDto> getListOfDoctors(){
-        return doctorService.getListOfDoctors();
+    public Page<ReturnDoctorDto> getListOfDoctors(Pageable pageable){
+        return doctorService.getListOfDoctors(pageable);
     }
 }
