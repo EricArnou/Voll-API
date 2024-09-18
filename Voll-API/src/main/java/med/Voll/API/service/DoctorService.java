@@ -21,8 +21,8 @@ public class DoctorService {
 
     @Transactional(isolation = Isolation.READ_COMMITTED)
     public Page<ReturnDoctorDto> getListOfDoctors(Pageable pageable) {
-        return doctorRepository.findAll(pageable)
-                .map(doctor -> new ReturnDoctorDto(doctor));
+        return doctorRepository.findAllByActiveTrue(pageable)
+                .map(ReturnDoctorDto::new);
     }
 
     @Transactional
