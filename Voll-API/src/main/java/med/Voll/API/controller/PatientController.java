@@ -1,5 +1,6 @@
 package med.Voll.API.controller;
 
+import jakarta.validation.Valid;
 import med.Voll.API.model.patient.RegisterPatientDto;
 import med.Voll.API.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class PatientController {
     private PatientService patientService;
 
     @PostMapping()
-    public void registerPatient(@RequestBody RegisterPatientDto registerPatientDto){
+    public void registerPatient(@RequestBody @Valid RegisterPatientDto registerPatientDto){
         patientService.registerPatient(registerPatientDto);
     }
 }
