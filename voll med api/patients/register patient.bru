@@ -1,0 +1,29 @@
+meta {
+  name: register patient
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/pacientes
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Jose Teles",
+    "email": "Jose_teles@email.com",
+    "cpf": "12345678903",
+    "phone" : "991123489",
+    "address": {
+      "place": "rua 5",
+      "neighborhood": "bairro3",
+      "cep": "12456782",
+      "state": "sp",
+      "city": "cidade",
+      "complement": "complemento",
+      "number": "123"
+    }
+  }
+}
