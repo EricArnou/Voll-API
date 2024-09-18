@@ -45,4 +45,8 @@ public class Doctor{
         if(updateDoctorDto.phone() != null) this.phone = updateDoctorDto.phone();
         if(updateDoctorDto.address() != null) this.address = new Address(updateDoctorDto.address());
     }
+
+    public void disableDoctor() {
+        this.active = false;
+    }
 }

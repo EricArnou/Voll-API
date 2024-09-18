@@ -30,4 +30,10 @@ public class DoctorService {
         var doctor = doctorRepository.getReferenceById(updateDoctorDto.id());
         doctor.updateInformation(updateDoctorDto);
     }
+
+    @Transactional
+    public void deleteDoctor(Long id) {
+        var doctor = doctorRepository.getReferenceById(id);
+        doctor.disableDoctor();
+    }
 }
