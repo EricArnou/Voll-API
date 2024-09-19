@@ -1,9 +1,6 @@
 package med.Voll.API.service;
 
-import med.Voll.API.model.patient.Patient;
-import med.Voll.API.model.patient.PatientRepository;
-import med.Voll.API.model.patient.RegisterPatientDto;
-import med.Voll.API.model.patient.ReturnPatientDto;
+import med.Voll.API.model.patient.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -25,5 +22,11 @@ public class PatientService {
     @Transactional(isolation = Isolation.READ_COMMITTED)
     public Page<ReturnPatientDto> getListOfPatients(Pageable pageable) {
         return patientRepository.findAll(pageable).map(ReturnPatientDto::new);
+    }
+
+    @Transactional
+    public void updatePatient(UpdatePatientDto updatePatientDto) {
+        var patient = patientRepository.getReferenceById(updatePatientDto.id());
+        patient.updateInformation(updatePatientDto);
     }
 }

@@ -29,6 +29,6 @@ public class PatientController {
 
     @PutMapping()
     public void updatePatient(@RequestBody @Valid UpdatePatientDto updatePatientDto){
-
+        patientService.updatePatient(updatePatientDto);
     }
 }

@@ -31,4 +31,10 @@ public class Patient {
         this.phone = registerPatientDto.phone();
         this.address = new Address(registerPatientDto.address());
     }
+
+    public void updateInformation(UpdatePatientDto updatePatientDto) {
+        if(updatePatientDto.name() != null) this.name = updatePatientDto.name();
+        if(updatePatientDto.phone() != null) this.phone = updatePatientDto.phone();
+        if(updatePatientDto.address() != null) this.address = new Address(updatePatientDto.address());
+    }
 }
