@@ -3,6 +3,7 @@ package med.Voll.API.controller;
 import jakarta.validation.Valid;
 import med.Voll.API.model.patient.RegisterPatientDto;
 import med.Voll.API.model.patient.ReturnPatientDto;
+import med.Voll.API.model.patient.UpdatePatientDto;
 import med.Voll.API.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,5 +25,10 @@ public class PatientController {
     @GetMapping()
     public Page<ReturnPatientDto> getListOfPatients(Pageable pageable){
         return patientService.getListOfPatients(pageable);
+    }
+
+    @PutMapping()
+    public void updatePatient(@RequestBody @Valid UpdatePatientDto updatePatientDto){
+
     }
 }
