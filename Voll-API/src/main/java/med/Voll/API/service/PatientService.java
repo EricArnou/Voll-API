@@ -29,4 +29,10 @@ public class PatientService {
         var patient = patientRepository.getReferenceById(updatePatientDto.id());
         patient.updateInformation(updatePatientDto);
     }
+
+    @Transactional
+    public void deletePatient(Long id) {
+        var patient = patientRepository.getReferenceById(id);
+        patient.disablePatient();
+    }
 }
