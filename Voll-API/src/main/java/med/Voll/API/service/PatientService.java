@@ -21,7 +21,7 @@ public class PatientService {
 
     @Transactional(isolation = Isolation.READ_COMMITTED)
     public Page<ReturnPatientDto> getListOfPatients(Pageable pageable) {
-        return patientRepository.findAll(pageable).map(ReturnPatientDto::new);
+        return patientRepository.findAllByActiveTrue(pageable).map(ReturnPatientDto::new);
     }
 
     @Transactional
