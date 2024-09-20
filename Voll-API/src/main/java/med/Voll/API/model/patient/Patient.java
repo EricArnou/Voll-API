@@ -20,6 +20,7 @@ public class Patient {
     private String email;
     private String phone;
     private String cpf;
+    private Boolean active;
 
     @Embedded
     private Address address;
@@ -30,6 +31,7 @@ public class Patient {
         this.email = registerPatientDto.email();
         this.phone = registerPatientDto.phone();
         this.address = new Address(registerPatientDto.address());
+        this.active = true;
     }
 
     public void updateInformation(UpdatePatientDto updatePatientDto) {
