@@ -38,4 +38,9 @@ public class PatientController {
     public ResponseEntity deletePatient(@PathVariable Long id){
         return patientService.deletePatient(id);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity getPatient(@PathVariable Long id){
+        return patientService.getPatient(id);
+    }
 }

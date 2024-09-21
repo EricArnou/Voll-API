@@ -46,4 +46,9 @@ public class PatientService {
         patient.disablePatient();
         return ResponseEntity.noContent().build();
     }
+
+    public ResponseEntity getPatient(Long id) {
+        var patient = patientRepository.getReferenceById(id);
+        return ResponseEntity.ok(new ReturnUpdatePatientDto(patient));
+    }
 }
