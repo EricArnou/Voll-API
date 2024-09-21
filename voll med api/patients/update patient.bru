@@ -6,6 +6,13 @@ meta {
 
 put {
   url: http://localhost:8080/pacientes
-  body: none
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "id" : 5,
+    "name" : "José Teles"
+  }
 }

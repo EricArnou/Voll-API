@@ -8,7 +8,9 @@ import med.Voll.API.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/pacientes")
@@ -18,22 +20,22 @@ public class PatientController {
     private PatientService patientService;
 
     @PostMapping()
-    public void registerPatient(@RequestBody @Valid RegisterPatientDto registerPatientDto){
-        patientService.registerPatient(registerPatientDto);
+    public ResponseEntity registerPatient(@RequestBody @Valid RegisterPatientDto registerPatientDto, UriComponentsBuilder uriComponentsBuilder){
+        return patientService.registerPatient(registerPatientDto, uriComponentsBuilder);
     }
 
     @GetMapping()
-    public Page<ReturnPatientDto> getListOfPatients(Pageable pageable){
+    public ResponseEntity getListOfPatients(Pageable pageable){
         return patientService.getListOfPatients(pageable);
     }
 
     @PutMapping()
-    public void updatePatient(@RequestBody @Valid UpdatePatientDto updatePatientDto){
-        patientService.updatePatient(updatePatientDto);
+    public ResponseEntity updatePatient(@RequestBody @Valid UpdatePatientDto updatePatientDto){
+        return patientService.updatePatient(updatePatientDto);
     }
 
     @DeleteMapping("/{id}")
-    public void deletePatient(@PathVariable Long id){
-        patientService.deletePatient(id);
+    public ResponseEntity deletePatient(@PathVariable Long id){
+        return patientService.deletePatient(id);
     }
 }
