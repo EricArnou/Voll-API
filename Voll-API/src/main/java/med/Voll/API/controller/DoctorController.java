@@ -8,7 +8,9 @@ import med.Voll.API.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/medicos")
@@ -18,22 +20,22 @@ public class DoctorController {
     private DoctorService doctorService;
 
     @PostMapping()
-    public void registerDoctor(@RequestBody @Valid RegisterDoctorDto registerDoctorDto){
-        doctorService.registerDoctor(registerDoctorDto);
+    public ResponseEntity registerDoctor(@RequestBody @Valid RegisterDoctorDto registerDoctorDto, UriComponentsBuilder uriComponentsBuilder){
+        return doctorService.registerDoctor(registerDoctorDto, uriComponentsBuilder);
     }
 
     @GetMapping()
-    public Page<ReturnDoctorDto> getListOfDoctors(Pageable pageable){
+    public ResponseEntity getListOfDoctors(Pageable pageable){
         return doctorService.getListOfDoctors(pageable);
     }
 
     @PutMapping()
-    public void updateDoctor(@RequestBody @Valid UpdateDoctorDto updateDoctorDto){
-        doctorService.updateDoctor(updateDoctorDto);
+    public ResponseEntity updateDoctor(@RequestBody @Valid UpdateDoctorDto updateDoctorDto){
+        return doctorService.updateDoctor(updateDoctorDto);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteDoctor(@PathVariable Long id){
-        doctorService.deleteDoctor(id);
+    public ResponseEntity deleteDoctor(@PathVariable Long id){
+        return doctorService.deleteDoctor(id);
     }
 }
