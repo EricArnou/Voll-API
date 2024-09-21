@@ -38,4 +38,9 @@ public class DoctorController {
     public ResponseEntity deleteDoctor(@PathVariable Long id){
         return doctorService.deleteDoctor(id);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity getDoctor(@PathVariable Long id){
+        return doctorService.getDoctor(id);
+    }
 }
