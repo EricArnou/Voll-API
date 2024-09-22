@@ -1,4 +1,4 @@
-package med.Voll.API.model.address;
+package med.Voll.API.domain.address;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

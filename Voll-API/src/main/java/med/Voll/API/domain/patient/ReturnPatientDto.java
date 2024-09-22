@@ -1,4 +1,4 @@
-package med.Voll.API.model.patient;
+package med.Voll.API.domain.patient;
 
 public record ReturnPatientDto(Long id, String name, String email, String cpf){
 

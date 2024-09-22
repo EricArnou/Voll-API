@@ -1,4 +1,4 @@
-package med.Voll.API.model.doctor;
+package med.Voll.API.domain.doctor;
 
 public record ReturnDoctorDto(Long id, String name, String email, String crm, Specialty specialty) {
 

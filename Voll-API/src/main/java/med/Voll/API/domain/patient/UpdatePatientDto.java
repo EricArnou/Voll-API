@@ -1,15 +1,14 @@
-package med.Voll.API.model.doctor;
+package med.Voll.API.domain.patient;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
-import med.Voll.API.model.address.AddressDto;
+import med.Voll.API.domain.address.AddressDto;
 
-public record UpdateDoctorDto(
+public record UpdatePatientDto(
         @NotNull
         Long id,
         String name,
         String phone,
         @Valid
-        AddressDto address
-) {
+        AddressDto address) {
 }

@@ -1,7 +1,7 @@
 package med.Voll.API.service;
 
-import med.Voll.API.model.patient.*;
-import med.Voll.API.patient.ReturnUpdatePatientDto;
+import med.Voll.API.domain.patient.*;
+import med.Voll.API.domain.patient.ReturnUpdatePatientDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -1,4 +1,4 @@
-package med.Voll.API.model.patient;
+package med.Voll.API.domain.patient;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

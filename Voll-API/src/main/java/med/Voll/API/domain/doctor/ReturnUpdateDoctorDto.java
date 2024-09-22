@@ -1,6 +1,6 @@
-package med.Voll.API.model.doctor;
+package med.Voll.API.domain.doctor;
 
-import med.Voll.API.model.address.Address;
+import med.Voll.API.domain.address.Address;
 
 public record ReturnUpdateDoctorDto(Long id, String name, String email, String crm, String phone, Specialty specialty, Address address){
 

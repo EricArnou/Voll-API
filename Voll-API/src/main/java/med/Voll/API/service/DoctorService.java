@@ -1,6 +1,6 @@
 package med.Voll.API.service;
 
-import med.Voll.API.model.doctor.*;
+import med.Voll.API.domain.doctor.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
