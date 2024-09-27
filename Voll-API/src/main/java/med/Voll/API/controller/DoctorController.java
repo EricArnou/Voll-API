@@ -1,5 +1,6 @@
 package med.Voll.API.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.Voll.API.domain.doctor.RegisterDoctorDto;
 import med.Voll.API.domain.doctor.UpdateDoctorDto;
@@ -12,6 +13,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/medicos")
+@SecurityRequirement(name = "bearer-key")
 public class DoctorController {
 
     @Autowired
