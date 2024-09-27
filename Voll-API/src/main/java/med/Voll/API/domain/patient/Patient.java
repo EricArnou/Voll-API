@@ -20,7 +20,7 @@ public class Patient {
     private String email;
     private String phone;
     private String cpf;
-    private Boolean active;
+    private boolean active;
 
     @Embedded
     private Address address;

@@ -22,6 +22,11 @@ public class ExceptionsHandler {
                 .map(FieldErrorsDto::new));
     }
 
+    @ExceptionHandler(VollMedException.class)
+    public ResponseEntity VollMedBusinessRules(VollMedException exception){
+        return ResponseEntity.badRequest().body(new ErrorMessageDto(exception.getMessage()));
+    }
+
     private record FieldErrorsDto(String field, String message){
         public FieldErrorsDto(FieldError exception){
             this(exception.getField(), exception.getDefaultMessage());

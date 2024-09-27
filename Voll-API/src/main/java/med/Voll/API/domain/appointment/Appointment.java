@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 import med.Voll.API.domain.doctor.Doctor;
 import med.Voll.API.domain.patient.Patient;
 
+import java.time.LocalDateTime;
+
 @Table(name = "appointments")
 @Entity
 @Getter
@@ -27,4 +29,6 @@ public class Appointment {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_doctor")
     private Doctor doctor;
+
+    private LocalDateTime schedule;
 }
