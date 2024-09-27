@@ -26,6 +26,16 @@ public class TestAssistant {
             .with(TemporalAdjusters.next(DayOfWeek.MONDAY))
             .withHour(10);
 
+    protected final LocalDateTime NEXT_MONDAY_AT_7AM = LocalDateTime.now()
+            .with(TemporalAdjusters.next(DayOfWeek.MONDAY))
+            .withHour(7);
+
+    protected final LocalDateTime NEXT_MONDAY_AT_19PM = LocalDateTime.now()
+            .with(TemporalAdjusters.next(DayOfWeek.MONDAY))
+            .withHour(19);
+    protected final LocalDateTime NEXT_THURSDAY_AT_10AM = LocalDateTime.now()
+            .with(TemporalAdjusters.next(DayOfWeek.THURSDAY))
+            .withHour(10);
 
     //doctor
     protected final String DOCTOR_NAME_1 = "doctor 1";
