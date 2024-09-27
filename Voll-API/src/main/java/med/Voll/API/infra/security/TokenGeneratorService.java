@@ -5,6 +5,8 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import med.Voll.API.domain.user.User;
+import med.Voll.API.infra.exceptions.ErrorMessage;
+import med.Voll.API.infra.exceptions.VollMedException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import java.time.Instant;
@@ -27,7 +29,7 @@ public class TokenGeneratorService {
                     .withExpiresAt(tokenExpire())
                     .sign(algorithm);
         } catch (JWTCreationException exception){
-            throw new RuntimeException("error generating token", exception);
+            throw new VollMedException(ErrorMessage.ERROR_GENERATING_TOKEN);
         }
     }
 
@@ -44,7 +46,7 @@ public class TokenGeneratorService {
                     .verify(tokenJWT)
                     .getSubject();
         } catch (JWTVerificationException exception){
-            throw new RuntimeException("Token invalid or expired");
+            throw new VollMedException(ErrorMessage.INVALID_TOKEN);
         }
     }
 }

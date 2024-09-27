@@ -9,7 +9,9 @@ public enum ErrorMessage {
     DOCTOR_IS_NOT_ACTIVE("The doctor must be active"),
     PATIENT_ALREADY_HAS_AN_APPOINTMENT("The patient already has an appointment for that day"),
     DOCTOR_NOT_AVAILABLE("The doctor already has an appointment for that date and time"),
-    SPECIALTY_IS_REQUIRED("Specialty must be specified when the doctor is not");
+    SPECIALTY_IS_REQUIRED("Specialty must be specified when the doctor is not"),
+    ERROR_GENERATING_TOKEN("error generating token"),
+    INVALID_TOKEN("Token invalid or expired");
 
     public final String label;
 
