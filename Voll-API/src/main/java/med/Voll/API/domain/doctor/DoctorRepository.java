@@ -21,7 +21,7 @@ public interface DoctorRepository extends JpaRepository<Doctor, Long> {
                 SELECT a.doctor.id FROM Appointment a
                 WHERE a.schedule = :schedule
               )
-              ORDER BY rand()
+              ORDER BY function('random')
               LIMIT 1
             """)
     Doctor findBySpecialtyAndFreeSchedule(Specialty specialty, LocalDateTime schedule);
