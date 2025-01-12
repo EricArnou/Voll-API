@@ -79,4 +79,4 @@ POST /login:
 
 ## License
 
-his project is licensed under the MIT License - see the [LICENSE](https://github.com/EricArnou/Voll-API/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/EricArnou/Voll-API/blob/main/LICENSE) file for details.
